@@ -1,8 +1,9 @@
 <template>
     <div class="form">
-        <input class="inputfield"  placeholder="Add Todo....">
+        <input class="inputfield" type="text" v-model="item.name" placeholder="Add Todo....">
 
-        <font-awesome-icon :icon="['fass', 'circle-plus']" class="fa-2x"/>
+        <font-awesome-icon :icon="['fas', 'circle-plus']" @click="addItem()" :class="[item.name ? 'active' : 'inactive', 'plus', 'fa-2x']"/>
+
 
 
     </div>
@@ -10,7 +11,33 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
+    data: function() {
+        return {
+            item: {
+                name: ""
+            }
+        };
+    },
+    methods: {
+        addItem() {
+            if (this.item.name == '') {
+                return;
+            }
+            axios.post('api/item/store', {
+                item: this.item
+            })
+            .then ( response => {
+                if (response.status === 201 ) {
+                    this.item.name = "";
+                }
+            })
+            .catch( error => {
+                console.log(error);
+            })
+        }
+    }
 
 }
 </script>
@@ -28,10 +55,15 @@ export default {
     margin-right: 10px;
     border: 0cm;
     background-color: rgba(243, 235, 235, 0.781);
-    width: 100%
+    width: 100%;
+    font-size: medium;
 }
-.fa-2x {
-    color: rgb(5, 255, 226);
+.active {
+    color: aqua;
 }
+.inactive {
+    color: rgba(243, 235, 235, 0.781);
+}
+
 
 </style>

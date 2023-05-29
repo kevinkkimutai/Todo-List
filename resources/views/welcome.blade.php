@@ -9,7 +9,7 @@
     <div id="app">
         <app></app>
     </div>
-    <script type="module" src="http://localhost:8001/resources/js/app.js"></script>
+    <script type="module" src="http://localhost:4000/resources/js/app.js"></script>
 
 </body>
 </html>
