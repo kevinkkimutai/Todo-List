@@ -4,6 +4,7 @@
             <h2 class="title">Todo List</h2>
             <addItem />
         </div>
+
         <listView />
     </div>
 </template>
@@ -24,13 +25,15 @@ export default {
 .todocontainer {
     width: 400px;
     margin: auto;
+    background-color: rgb(157, 1, 247);
 }
 .title {
-    color: aqua;
-    align-items: center;
-    justify-content: center;
+    color: rgb(64, 185, 86);
+    text-align: center;
 }
 .heading {
-    background-color: blueviolet;
+    background-color: rgba(10, 16, 58, 0.887);
+    border-radius: 5px;
+
 }
 </style>
