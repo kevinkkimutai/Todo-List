@@ -2,11 +2,11 @@ import { createApp } from 'vue';
 import App from './vue/app.vue';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faPlusCircle, faCirclePlus, faUserSecret } from '@fortawesome/free-solid-svg-icons';
+import { faCirclePlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
 // Register Font Awesome icons
-library.add(faCirclePlus, faCirclePlus, faUserSecret);
+library.add( faCirclePlus, faTrash );
 
 // Create the Vue app
 const app = createApp(App);

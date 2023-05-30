@@ -2,10 +2,12 @@
     <div class="todocontainer">
         <div class="heading">
             <h2 class="title">Todo List</h2>
-            <addItem />
+            <addItem   v-on:reloadlist="getList()"/>
         </div>
 
-        <listView  :items="items"/>
+        <listView  :items="items"
+        v-on:reloadlist="getList()"
+        />
     </div>
 </template>
 
